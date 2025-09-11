@@ -1,26 +1,72 @@
-.ideas{ padding-inline: var(--space-4) }
-.ideas-list{ list-style:none; padding:0; margin:0; }
-.ideas-list .idea{ border-top:1px solid var(--border) }
-.ideas-list .idea:last-child{ border-bottom:1px solid var(--border) }
-.ideas-list a{ display:flex; gap: var(--space-4); align-items:baseline; padding-block: .85rem; text-decoration:none; color: inherit }
-.idea-index{ display:inline-block; width: 2ch; text-align:right; font-variant-numeric: tabular-nums; color: var(--muted) }
-.idea-title{ font-weight:600 }
-/* Hover-fade like 37signals "signals" index */
-@media (any-hover:hover){
-  .cluster--index:hover .idea a{ opacity:.45 }
-  .cluster--index:hover .idea a:hover{ opacity:1 }
-  .cluster--index:focus-within .idea a{ opacity:.45 }
-  .cluster--index:focus-within .idea a:focus{ opacity:1 }
+.ideas {
+  color: var(--color-white);
+  position: relative;
 }
 
-.idea-detail .idea-header h2{ font-weight:700; letter-spacing:0 }
-.idea-detail .idea-header .idea-index{ color: var(--muted) }
-.next-idea{
-  position: fixed; right: 1rem; bottom: 1rem;
-  width: .9rem; height: .9rem; border-radius: 50%;
-  background: var(--link); display:inline-block; text-indent:-9999px;
-  box-shadow: 0 0 0 .35rem color-mix(in oklab, var(--link) 30%, transparent);
+.ideas .ideas__header dl,
+.ideas .ideas__header h2 {
+  display: flex;
+  font-weight: 700;
+  padding-bottom: 0.15em;
+  padding-top: 0.15em;
 }
-@media (pointer: coarse){
-  .next-idea{ display:none }
+
+.ideas .ideas__header dl dt,
+.ideas .ideas__header h2 span {
+  font-feature-settings: 'ss02', 'tnum';
+  width: 2.8ch;
+}
+
+.ideas .ideas__header dl dd,
+.ideas .ideas__header h2 strong {
+  transition: opacity var(--transition);
+  width: calc(100% - 2.8ch);
+}
+
+.ideas .ideas__header a {
+  display: block;
+  letter-spacing: -0.01em;
+  pointer-events: auto;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.ideas .ideas__content {
+  margin-left: 2.8ch;
+  margin-top: 0.5em;
+  max-width: 50ch;
+  pointer-events: auto;
+}
+
+.ideas .ideas__content > * + * {
+  margin-top: 0.5em;
+}
+
+.ideas.ideas--clone {
+  display: none;
+}
+
+@media(min-width: 64em) and (hover: hover) and (pointer: fine) {
+
+  .ideas .ideas__header dl,
+  .ideas .ideas__header h2 {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+
+  .ideas:hover,
+  .ideas:focus,
+  .ideas:focus-within {
+    z-index: 103;
+  }
+
+  .ideas .ideas__header a:hover,
+  .ideas .ideas__header a:focus {
+    color: var(--color-white);
+  }
+
+  .ideas:not(:last-child) .ideas__content {
+    margin-bottom: 0.5em;
+  }
+
 }
