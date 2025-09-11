@@ -1,0 +1,11 @@
+{% assign sorted = site.ideas | sort: "num" %}
+<ol class="ideas-list" role="list">
+  {% for idea in sorted %}
+  <li class="idea">
+    <a href="{{ idea.url | relative_url }}">
+      <span class="idea-index">{% assign n = idea.num | plus: 0 %}{% if n < 10 %}0{% endif %}{{ n }}</span>
+      <span class="idea-title">{{ idea.title }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ol>

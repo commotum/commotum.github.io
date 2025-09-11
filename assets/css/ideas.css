@@ -1,0 +1,26 @@
+.ideas{ padding-inline: var(--space-4) }
+.ideas-list{ list-style:none; padding:0; margin:0; }
+.ideas-list .idea{ border-top:1px solid var(--border) }
+.ideas-list .idea:last-child{ border-bottom:1px solid var(--border) }
+.ideas-list a{ display:flex; gap: var(--space-4); align-items:baseline; padding-block: .85rem; text-decoration:none; color: inherit }
+.idea-index{ display:inline-block; width: 2ch; text-align:right; font-variant-numeric: tabular-nums; color: var(--muted) }
+.idea-title{ font-weight:600 }
+/* Hover-fade like 37signals "signals" index */
+@media (any-hover:hover){
+  .cluster--index:hover .idea a{ opacity:.45 }
+  .cluster--index:hover .idea a:hover{ opacity:1 }
+  .cluster--index:focus-within .idea a{ opacity:.45 }
+  .cluster--index:focus-within .idea a:focus{ opacity:1 }
+}
+
+.idea-detail .idea-header h2{ font-weight:700; letter-spacing:0 }
+.idea-detail .idea-header .idea-index{ color: var(--muted) }
+.next-idea{
+  position: fixed; right: 1rem; bottom: 1rem;
+  width: .9rem; height: .9rem; border-radius: 50%;
+  background: var(--link); display:inline-block; text-indent:-9999px;
+  box-shadow: 0 0 0 .35rem color-mix(in oklab, var(--link) 30%, transparent);
+}
+@media (pointer: coarse){
+  .next-idea{ display:none }
+}

@@ -1,0 +1,26 @@
+education:
+  - title: "B.S. Electrical Engineering"
+    org: "Oregon State University"
+    start: "YYYY"
+    end: "YYYY"
+    details:
+      - "Focus: ..."
+      - "GPA: ..."
+experience:
+  - role: "Title"
+    org: "Company"
+    start: "YYYY"
+    end: "YYYY or Present"
+    bullets:
+      - "What you did, impact metric if possible"
+      - "One more bullet"
+projects:
+  - name: "Project name"
+    when: "YYYY"
+    bullets:
+      - "One-liner about problem/solution"
+      - "Stack: ..."
+skills:
+  - "Skill A"
+  - "Skill B"
+  - "Skill C"

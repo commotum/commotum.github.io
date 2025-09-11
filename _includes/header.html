@@ -1,0 +1,13 @@
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header" role="banner">
+  <div class="wrap">
+    <a class="brand" href="/">Jake Peterson</a>
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        {% for item in site.data.nav %}
+          <li><a href="{{ item.url | relative_url }}" {% if page.url == item.url %}aria-current="page"{% endif %}>{{ item.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

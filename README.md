@@ -1,2 +1,3 @@
-# commotum.github.io
-Personal Website
+# Jake Peterson — Jekyll starter
+
+This repo powers https://jakepeterson.com
