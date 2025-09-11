@@ -1,29 +1,29 @@
-.ideas {
+.signal {
   color: var(--color-white);
   position: relative;
 }
 
-.ideas .ideas__header dl,
-.ideas .ideas__header h2 {
+.signal .signal__header dl,
+.signal .signal__header h2 {
   display: flex;
   font-weight: 700;
   padding-bottom: 0.15em;
   padding-top: 0.15em;
 }
 
-.ideas .ideas__header dl dt,
-.ideas .ideas__header h2 span {
+.signal .signal__header dl dt,
+.signal .signal__header h2 span {
   font-feature-settings: 'ss02', 'tnum';
   width: 2.8ch;
 }
 
-.ideas .ideas__header dl dd,
-.ideas .ideas__header h2 strong {
+.signal .signal__header dl dd,
+.signal .signal__header h2 strong {
   transition: opacity var(--transition);
   width: calc(100% - 2.8ch);
 }
 
-.ideas .ideas__header a {
+.signal .signal__header a {
   display: block;
   letter-spacing: -0.01em;
   pointer-events: auto;
@@ -31,41 +31,41 @@
   transition: color var(--transition);
 }
 
-.ideas .ideas__content {
+.signal .signal__content {
   margin-left: 2.8ch;
   margin-top: 0.5em;
   max-width: 50ch;
   pointer-events: auto;
 }
 
-.ideas .ideas__content > * + * {
+.signal .signal__content > * + * {
   margin-top: 0.5em;
 }
 
-.ideas.ideas--clone {
+.signal.signal--clone {
   display: none;
 }
 
 @media(min-width: 64em) and (hover: hover) and (pointer: fine) {
 
-  .ideas .ideas__header dl,
-  .ideas .ideas__header h2 {
+  .signal .signal__header dl,
+  .signal .signal__header h2 {
     padding-bottom: 0;
     padding-top: 0;
   }
 
-  .ideas:hover,
-  .ideas:focus,
-  .ideas:focus-within {
+  .signal:hover,
+  .signal:focus,
+  .signal:focus-within {
     z-index: 103;
   }
 
-  .ideas .ideas__header a:hover,
-  .ideas .ideas__header a:focus {
+  .signal .signal__header a:hover,
+  .signal .signal__header a:focus {
     color: var(--color-white);
   }
 
-  .ideas:not(:last-child) .ideas__content {
+  .signal:not(:last-child) .signal__content {
     margin-bottom: 0.5em;
   }
 

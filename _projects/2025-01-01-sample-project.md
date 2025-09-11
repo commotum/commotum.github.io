@@ -8,9 +8,6 @@ slug: "sample-project"
 <h2>Background</h2>
 <p>Explain the problem, constraints, and goals.</p>
 <h2>Approach</h2>
-<ul>
-  <li>What you tried</li>
-  <li>Tradeoffs you made</li>
-</ul>
+<ul><li>What you tried</li><li>Tradeoffs you made</li></ul>
 <h2>Results</h2>
 <p>Outcomes with any numbers you can share.</p>

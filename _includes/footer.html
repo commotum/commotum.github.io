@@ -1,5 +1,19 @@
-<footer class="site-footer">
-  <div class="wrap">
-    <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}.</p>
+<footer class="footer">
+  <!-- Footer menu intentionally removed to match Jake's spec -->
+  <div class="footer__next">
+    {% comment %} Next Idea "dot" {% endcomment %}
+    {% assign ideas = site.ideas | sort: "num" %}
+    {% assign next = nil %}
+    {% for i in (0..ideas.size) %}
+      {% assign it = ideas[i] %}
+      {% if it.url == page.url %}
+        {% assign j = i | plus: 1 %}
+        {% if j < ideas.size %}{% assign next = ideas[j] %}{% endif %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    {% if next %}
+      <a aria-label="Next Idea: {{ next.title }}" href="{{ next.url | relative_url }}" tabindex="-1"></a>
+    {% endif %}
   </div>
 </footer>

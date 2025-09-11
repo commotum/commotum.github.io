@@ -5,7 +5,7 @@ education:
     end: "YYYY"
     details:
       - "Focus: ..."
-      - "GPA: ..."
+
 experience:
   - role: "Title"
     org: "Company"
@@ -13,14 +13,13 @@ experience:
     end: "YYYY or Present"
     bullets:
       - "What you did, impact metric if possible"
-      - "One more bullet"
+
 projects:
   - name: "Project name"
     when: "YYYY"
     bullets:
       - "One-liner about problem/solution"
-      - "Stack: ..."
+
 skills:
   - "Skill A"
   - "Skill B"
-  - "Skill C"

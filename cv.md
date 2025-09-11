@@ -12,9 +12,7 @@ permalink: /cv/
     <h3>{{ item.role }} — {{ item.org }}</h3>
     <p class="when">{{ item.start }}–{{ item.end }}</p>
     {% if item.bullets %}
-    <ul>
-      {% for b in item.bullets %}<li>{{ b }}</li>{% endfor %}
-    </ul>
+    <ul>{% for b in item.bullets %}<li>{{ b }}</li>{% endfor %}</ul>
     {% endif %}
   </li>
   {% endfor %}

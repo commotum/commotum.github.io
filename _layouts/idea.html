@@ -1,12 +1,19 @@
 ---
 layout: base
+classes: controller controller--origin is-signal
 ---
-<article class="idea-detail narrow">
-  <header class="idea-header">
-    <h2><span class="idea-index">{% assign n = page.num | plus: 0 %}{% if n < 10 %}0{% endif %}{{ n }}</span> <strong>{{ page.title }}</strong></h2>
-  </header>
-  <div class="content">
-    {{ content }}
-  </div>
-</article>
-{% include next-idea-dot.html %}
+<section class="signal signal--clone" data-signal="{% assign n = page.num | plus: 0 %}{% if n < 10 %}0{% endif %}{{ n }}">
+</section>
+<div class="cluster cluster--signal cluster--loaded">
+  <section class="signal signal--select">
+    <header class="signal__header" tabindex="-1" autofocus>
+      <h2 aria-label="Idea {% assign n = page.num | plus: 0 %}{% if n < 10 %}0{% endif %}{{ n }}. {{ page.title }}">
+        <span>{% assign n = page.num | plus: 0 %}{% if n < 10 %}0{% endif %}{{ n }}.</span>
+        <strong>{{ page.title }}</strong>
+      </h2>
+    </header>
+    <div class="signal__content content">
+      {{ content }}
+    </div>
+  </section>
+</div>

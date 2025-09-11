@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html class="{{ page.classes }}">
 <head>
   {% include head.html %}
   <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
 </head>
 <body>
   {% include header.html %}
-  <main id="content" class="main" role="main">
+  <main id="content">
     {{ content }}
   </main>
   {% include footer.html %}
