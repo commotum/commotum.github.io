@@ -9,19 +9,19 @@
   pointer-events: none;
 }
 
-.cluster.cluster--signal .signal {
+.cluster.cluster--note .note {
   display: none;
 }
 
-.cluster.cluster--signal .signal .signal__header a {
+.cluster.cluster--note .note .note__header a {
   color: rgba(var(--rgb-white), 0.4375);
 }
 
-.cluster.cluster--signal .signal .signal__header a dl dd {
+.cluster.cluster--note .note .note__header a dl dd {
   opacity: 0;
 }
 
-.cluster.cluster--signal .signal.signal--select {
+.cluster.cluster--note .note.note--select {
   display: block;
   z-index: 102;
 }
@@ -46,17 +46,17 @@
     color: rgba(var(--rgb-white), 0.4375);
   }
 
-  .cluster.cluster--signal .signal {
+  .cluster.cluster--note .note {
     display: block;
   }
 
-  .cluster.cluster--signal .signal .signal__header a:hover,
-  .cluster.cluster--signal .signal .signal__header a:focus {
+  .cluster.cluster--note .note .note__header a:hover,
+  .cluster.cluster--note .note .note__header a:focus {
     color: var(--color-white);
   }
 
-  .cluster.cluster--signal .signal .signal__header a:hover dl dd,
-  .cluster.cluster--signal .signal .signal__header a:focus dl dd {
+  .cluster.cluster--note .note .note__header a:hover dl dd,
+  .cluster.cluster--note .note .note__header a:focus dl dd {
     opacity: 1;
   }
 

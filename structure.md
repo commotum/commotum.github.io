@@ -1,4 +1,4 @@
-/37signals-website/
+/commotum-website/
 ├── index.html (or similar)
 ├── assets/
 │   ├── fonts/
@@ -50,7 +50,7 @@
 │       ├── origin.css
 │       ├── page.css
 │       ├── policies.css
-│       ├── signal.css
+│       ├── note.css
 │       ├── signup.css
 │       ├── thought.css
 │       └── thoughts.css
