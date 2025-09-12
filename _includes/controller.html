@@ -1,0 +1,33 @@
+{%- assign order = site.data.ideas.order -%}
+{%- assign current_id = include.selected_id -%}
+
+{%- assign idx = -1 -%}
+{%- for x in order -%}
+  {%- if x == current_id -%}{%- assign idx = forloop.index0 -%}{%- endif -%}
+{%- endfor -%}
+
+{%- if idx == -1 -%}
+  {%- assign next_id = order[0] -%}
+  {%- assign prev_id = order | last -%}
+{%- else -%}
+  {%- assign next_index = idx | plus: 1 -%}
+  {%- assign prev_index = idx | minus: 1 -%}
+  {%- if next_index >= order.size -%}{%- assign next_index = 0 -%}{%- endif -%}
+  {%- if prev_index < 0 -%}{%- assign prev_index = order.size | minus: 1 -%}{%- endif -%}
+  {%- assign next_id = order[next_index] -%}
+  {%- assign prev_id = order[prev_index] -%}
+{%- endif -%}
+
+{%- assign next_doc = site.ideas | where: "id", next_id | first -%}
+{%- assign prev_doc = site.ideas | where: "id", prev_id | first -%}
+
+<div class="controller controller--origin controller--loaded"
+     data-next="/{{ next_id }}"
+     data-previous="/{{ prev_id }}"
+     role="navigation">
+  <a href="{{ next_doc.url | absolute_url }}"
+     aria-label="Next idea: {{ next_doc.title }}"
+     tabindex="-1"></a>
+</div>
+
+<div class="origin"></div>

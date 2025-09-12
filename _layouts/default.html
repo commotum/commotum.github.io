@@ -1,19 +1,28 @@
 <!doctype html>
-<html lang="en">
+<html lang="en"{% if page.layout == "idea" %} class="is-idea"{% endif %} style="--rgb-theme: {{ page.theme_rgb | default: '0, 0, 0' }};">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ page.title }} · {{ site.title }}</title>
 
-    <!-- Multi-file CSS setup -->
+    <title>{{ page.title | default: site.title }} · {{ site.title }}</title>
+
+    <!-- CSS stack to match static pages -->
     <link rel="stylesheet" href="{{ '/assets/css/reset.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/root.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/fonts.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/elements.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/button.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/content.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/boundary.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/cluster.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/controller.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/header.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/nav.css' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/assets/css/utilities.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/origin.css' | relative_url }}">
+
+    <!-- Do NOT include utilities.css here; header/nav behavior is controlled by header.css/nav.css -->
   </head>
-  <body>
+  <body class="is-ready">
     {% include header.html %}
     <main id="content" tabindex="-1">
       {{ content }}

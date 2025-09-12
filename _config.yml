@@ -4,3 +4,13 @@ description: "Header & nav (multi-file CSS)"
 baseurl: ""
 permalink: pretty
 markdown: kramdown
+collections:
+  ideas:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: ideas
+    values:
+      layout: idea

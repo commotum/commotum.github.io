@@ -1,0 +1,30 @@
+{%- assign order = site.data.ideas.order -%}
+<div class="cluster cluster--index">
+{%- for id in order -%}
+  {%- assign doc = site.ideas | where: "id", id | first -%}
+  {%- if doc -%}
+    <section class="idea">
+      <header class="idea__header"{% if include.selected_id == doc.id %} tabindex="-1" autofocus{% endif %}>
+        {%- if include.selected_id == doc.id -%}
+          <h2 aria-label="{{ doc.id }}. {{ doc.title }}">
+            <span>{{ doc.id }}.</span>
+            <strong>{{ doc.title }}</strong>
+          </h2>
+        {%- else -%}
+          <a href="{{ doc.url | relative_url }}" aria-label="{{ doc.id }}. {{ doc.title }}">
+            <dl>
+              <dt>{{ doc.id }}.</dt>
+              <dd>{{ doc.title }}</dd>
+            </dl>
+          </a>
+        {%- endif -%}
+      </header>
+      {%- if include.selected_id == doc.id -%}
+      <div class="idea__content">
+        {{ doc.content | markdownify }}
+      </div>
+      {%- endif -%}
+    </section>
+  {%- endif -%}
+{%- endfor -%}
+</div>
