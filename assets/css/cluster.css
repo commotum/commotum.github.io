@@ -6,7 +6,6 @@
 .cluster.cluster--index {
   margin-bottom: 7.4em;
   opacity: 1;
-  pointer-events: none;
 }
 
 .cluster.cluster--signal .signal {

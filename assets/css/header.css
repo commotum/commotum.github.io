@@ -1,3 +1,14 @@
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+}
+
+.skip-link:focus {
+  left: auto;
+  top: auto;
+}
+
 .header {
   background: linear-gradient(
     180deg,
