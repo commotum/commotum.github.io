@@ -13,7 +13,7 @@ This version mirrors the earlier plan: **separate** CSS files for tokens, fonts,
 `_layouts/default.html` links the files **in this order**.
 
 ## How to test
-1. Replace `assets/images/logo.svg` with your logo if you want.
+1. Replace `assets/images/logo.webp` with your logo if you want.
 2. Run `bundle install` to install dependencies.
 3. Run `bundle exec jekyll serve` locally or push to GitHub Pages.
 4. Resize the viewport: below ~100ch you'll see the mobile nav; above it, the desktop header.
