@@ -1,149 +1,52 @@
-.nav-active {
-  display: none;
-}
-
-.nav-active:checked ~ .nav-underlay {
-  display: block;
-}
-
-.nav-active:checked ~ .nav {
-  background: var(--color-white);
-  border-radius: 0 0 var(--spacing) var(--spacing);
-  pointer-events: auto;
-}
-
-.nav-active:checked ~ .nav .nav__logo {
-  display: block;
-}
-
-.nav-active:checked ~ .nav .nav__toggle label span {
-  color: var(--color-black);
-}
-
-.nav-active:checked ~ .nav .nav__options {
-  display: flex;
-}
-
-@media(min-width: 64em) and (hover: hover) and (pointer: fine) {
-
-  .nav-active:checked ~ .nav-underlay,
-  .nav-active:checked ~ .nav {
-    display: none;
-  }
-
-}
-
-.nav-underlay {
-  background: rgba(var(--rgb-theme), 0.8);
-  display: none;
-  height: 100%;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 107;
-}
-
-@media(min-width: 64em) and (hover: hover) and (pointer: fine) {
-
-  .nav-underlay {
-    display: none;
-  }
-
-}
-
+/* Mobile nav bar (visible on small widths) */
 .nav {
-  display: flex;
-  flex-direction: column;
-  left: 0;
-  pointer-events: none;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 108;
+  position: sticky; top: 0; z-index: 700;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+.nav__logo img { height: 20px; }
+
+.nav__toggle label {
+  display: inline-flex; align-items: center; gap: .5ch;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer; user-select: none;
 }
 
-.nav .nav__logo {
-  display: none;
-  position: absolute;
-  right: 0;
-  top: 0;
+/* Drawer panel */
+.nav__options {
+  position: fixed; top: 0; right: 0; bottom: 0;
+  inline-size: min(22rem, 82vw);
+  padding: var(--space-5) var(--space-4);
+  background: var(--bg);
+  box-shadow: -20px 0 40px rgba(0,0,0,.15);
+  transform: translateX(100%);
+  transition: transform .2s ease;
+  display: flex; flex-direction: column; gap: var(--space-5);
+  z-index: 900;
+}
+.nav__options ul { list-style: none; display: grid; gap: var(--space-2); }
+.nav__options a {
+  color: var(--text); text-decoration: none;
+  padding: var(--space-1) var(--space-2); border-radius: var(--radius);
+}
+.nav__options a:hover, .nav__options a:focus-visible {
+  background: color-mix(in oklch, var(--text) 10%, transparent);
+  color: var(--bg); outline: none;
 }
 
-.nav .nav__logo a {
-  display: block;
-  height: var(--line-height);
-  margin-right: var(--spacing);
-  margin-top: var(--spacing);
+/* Underlay behind drawer */
+.nav-underlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.35);
+  opacity: 0; pointer-events: none;
+  transition: opacity .2s ease; z-index: 800;
 }
 
-.nav .nav__logo a img {
-  height: 100%;
-  max-height: 100%;
-  width: auto;
-}
-
-.nav .nav__toggle {
-  display: flex;
-}
-
-.nav .nav__toggle label {
-  align-items: center;
-  cursor: pointer;
-  display: flex;
-  justify-content: flex-start;
-  line-height: var(--line-height);
-  padding: var(--spacing);
-  pointer-events: auto;
-}
-
-.nav .nav__toggle label span {
-  color: var(--color-white);
-  font-size: var(--font-size-small);
-  font-weight: 700;
-  letter-spacing: normal;
-}
-
-.nav .nav__options {
-  display: none;
-  flex-direction: column;
-  padding-left: var(--spacing);
-  padding-right: var(--spacing);
-}
-
-.nav .nav__options ul {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  line-height: var(--line-height);
-}
-
-.nav .nav__options ul li {
-  font-weight: 700;
-}
-
-.nav .nav__options ul li a {
-  color: var(--color-black);
-  text-decoration: none;
-}
-
-.nav .nav__options ul:last-child {
-  border-top: 1px solid rgba(var(--rgb-black), 0.1);
-  margin-top: calc(var(--spacing) * 1.5);
-  padding-bottom: calc(var(--spacing) * 1.5);
-  padding-top: calc(var(--spacing) * 1.5);
-}
-
-.nav .nav__options ul:last-child li {
-  font-size: var(--font-size-small);
-  letter-spacing: normal;
-  line-height: var(--line-height);
-}
-
-@media(min-width: 64em) and (hover: hover) and (pointer: fine) {
-
-  .nav {
-    display: none;
-  }
-
-}
+/* Checkbox toggles both underlay and drawer */
+#nav-active:checked ~ .nav-underlay { opacity: 1; pointer-events: auto; }
+#nav-active:checked ~ .nav .nav__options { transform: translateX(0); }

@@ -1,7 +1,0 @@
-/* Jake override: force system UI fonts and ensure readable contrast */
-:root{
-  --font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
-  --font-family-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
-}
-/* Optional: ensure link underline offset is nice */
-a{ text-underline-offset: .14em; }

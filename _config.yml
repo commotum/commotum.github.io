@@ -1,38 +1,6 @@
-title: "Jake Peterson"
-description: "Ideas, Projects, About, Contact, CV"
-url: "https://jakepeterson.com"
+title: commotum
+description: "Header & nav (multi-file CSS)"
+# For project pages set baseurl: "/your-repo-name"
 baseurl: ""
 permalink: pretty
-
 markdown: kramdown
-plugins:
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-redirect-from
-
-collections:
-  ideas:
-    output: true
-    permalink: "/:slug/"
-  projects:
-    output: true
-    permalink: "/projects/:slug/"
-
-defaults:
-  - scope:
-      path: ""
-      type: "ideas"
-    values:
-      layout: idea
-  - scope:
-      path: ""
-      type: "projects"
-    values:
-      layout: project
-
-exclude:
-  - README.md
-  - node_modules
-  - package.json
-  - package-lock.json

@@ -1,0 +1,9 @@
+/* Responsive visibility */
+@media (max-width: 100ch){
+  .header { display: none; }
+  .nav { display: flex; }
+}
+@media (min-width: 100ch){
+  .header { display: flex; }
+  .nav { display: none; }
+}
