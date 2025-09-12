@@ -18,8 +18,8 @@
   {%- assign prev_id = order[prev_index] -%}
 {%- endif -%}
 
-{%- assign next_doc = site.ideas | where: "id", next_id | first -%}
-{%- assign prev_doc = site.ideas | where: "id", prev_id | first -%}
+{%- assign next_doc = site.ideas | where: "idea_id", next_id | first -%}
+{%- assign prev_doc = site.ideas | where: "idea_id", prev_id | first -%}
 
 <div class="controller controller--origin controller--loaded"
      data-next="/{{ next_id }}"
