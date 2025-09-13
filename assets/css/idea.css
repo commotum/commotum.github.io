@@ -58,6 +58,15 @@ html.is-idea .cluster.cluster--index .idea .idea__header a:focus dl dd {
   opacity: 1;
 }
 
+/* Single-page variant */
+html.is-idea .cluster.cluster--signal .idea .idea__header a dl dd {
+  opacity: 0;
+}
+
+html.is-idea .cluster.cluster--signal .idea .idea__header a:hover dl dd,
+html.is-idea .cluster.cluster--signal .idea .idea__header a:focus dl dd {
+  opacity: 1;
+}
 @media (hover: none), (pointer: coarse) {
   html.is-idea .cluster.cluster--index .idea .idea__header a dl dd {
     opacity: 1;
@@ -88,4 +97,3 @@ html.is-idea .cluster.cluster--index .idea .idea__header a:focus dl dd {
   }
 
 }
-
