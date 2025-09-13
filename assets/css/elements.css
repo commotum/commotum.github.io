@@ -160,8 +160,10 @@ table th {
 
 @media(min-width: 64em) and (hover: hover) and (pointer: fine) {
 
+  /* Must match the cluster/boundary desktop baseline */
   html {
-    scroll-padding-top: 22.2vh;
+    scroll-padding-top: max(22.2vh, 5.4em);
   }
 
 }
+
