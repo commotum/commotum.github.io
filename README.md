@@ -8,6 +8,6 @@ Contents:
 - `_data/ideas.yml` — ordered list of IDs for navigation.
 - `README.md` — this file.
 
-## Notes
+## Idea Tips
 - For monochrome, delete `theme_rgb` fields or ignore them in your layout.
 - To hide images, remove `image` or guard with a Liquid `{% if page.image %}` block.

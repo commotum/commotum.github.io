@@ -5,7 +5,7 @@ html {
   scroll-padding-top: calc(var(--font-size) * 7.4);
 }
 
-html:not(.is-note) {
+html:not(.is-idea) {
   scroll-behavior: smooth;
 }
 
