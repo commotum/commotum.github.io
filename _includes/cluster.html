@@ -3,8 +3,8 @@
 {%- for id in order -%}
   {%- assign doc = site.ideas | where: "idea_id", id | first -%}
   {%- if doc -%}
-    <section class="idea"{% if include.selected_id == doc.idea_id %} data-selected="true"{% endif %}>
-      <header class="idea__header"{% if include.selected_id == doc.idea_id %} tabindex="-1" data-selected="true" autofocus{% endif %}>
+    <section class="idea{% if include.selected_id == doc.idea_id %} idea--select{% endif %}">
+      <header class="idea__header">
         {%- if include.selected_id == doc.idea_id -%}
           <h2 aria-label="{{ doc.idea_id }}. {{ doc.title }}">
             <span>{{ doc.idea_id }}.</span>

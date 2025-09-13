@@ -82,8 +82,8 @@
   font-family: 'Lab Grotesque Mono';
   font-style: normal;
   font-weight: 400;
-  src: url('/assets/fonts/LabGrotesqueMono.woff2') format('woff2'),
-       url('/assets/fonts/LabGrotesqueMono.woff') format('woff');
+  src: url('/assets/fonts/LabGrotesqueMono-Regular.woff2') format('woff2'),
+       url('/assets/fonts/LabGrotesqueMono-Regular.woff') format('woff');
 }
 
 @font-face {
