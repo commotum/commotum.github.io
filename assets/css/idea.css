@@ -100,7 +100,7 @@ html.is-idea .cluster.cluster--signal .idea .idea__header a:focus dl dd {
 @media (min-width: 64em) and (hover: hover) and (pointer: fine) {
   /* Detail page: de-emphasize non-selected items' numbers */
   html.is-idea .cluster.cluster--signal .idea:not([data-selected="true"]) .idea__header a dl dt {
-    opacity: 0.44; /* matches the dimming used in index hover state */
+    opacity: 0.25; /* stronger dim for non-selected */
     transition: opacity var(--transition);
   }
 
