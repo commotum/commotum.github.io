@@ -32,7 +32,7 @@
 
 .header h1 a {
   display: block;
-  height: var(--line-height);
+  height: calc(var(--line-height) / 2);
   margin-right: var(--spacing);
   margin-top: var(--spacing);
 }
