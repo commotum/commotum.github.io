@@ -97,3 +97,16 @@ html.is-idea .cluster.cluster--signal .idea .idea__header a:focus dl dd {
   }
 
 }
+@media (min-width: 64em) and (hover: hover) and (pointer: fine) {
+  /* Detail page: de-emphasize non-selected items' numbers */
+  html.is-idea .cluster.cluster--signal .idea:not([data-selected="true"]) .idea__header a dl dt {
+    opacity: 0.44; /* matches the dimming used in index hover state */
+    transition: opacity var(--transition);
+  }
+
+  /* Restore emphasis on intent */
+  html.is-idea .cluster.cluster--signal .idea .idea__header a:hover dl dt,
+  html.is-idea .cluster.cluster--signal .idea .idea__header a:focus dl dt {
+    opacity: 1;
+  }
+}
