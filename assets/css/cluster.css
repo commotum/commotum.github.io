@@ -6,19 +6,28 @@
 .cluster.cluster--index {
   margin-bottom: 7.4em;
   opacity: 1;
-  pointer-events: none; /* container inert, children interactive */
+  pointer-events: none;
+}
+
+.cluster.cluster--signal .idea {
+  display: none;
+}
+
+.cluster.cluster--signal .idea .idea__header a {
+  color: rgba(var(--rgb-white), 0.4375);
+}
+
+.cluster.cluster--signal .idea .idea__header a dl dd {
+  opacity: 0;
+}
+
+.cluster.cluster--signal .idea.idea--select {
+  display: block;
+  z-index: 102;
 }
 
 .cluster.cluster--loaded {
   opacity: 1;
-}
-
-/* Single-page focus on mobile: only show the selected idea */
-.cluster.cluster--signal .idea { display: none; }
-.cluster.cluster--signal .idea[data-selected="true"] { display: block; }
-
-@media(min-width: 64em) and (hover: hover) and (pointer: fine) {
-  .cluster.cluster--signal .idea { display: block; }
 }
 
 @media(min-width: 64em) and (hover: hover) and (pointer: fine) {
@@ -36,29 +45,7 @@
   .cluster.cluster--index:focus-within header a:not(:focus) {
     color: rgba(var(--rgb-white), 0.4375);
   }
-}
 
-/* Index view: hide titles until intent */
-.cluster.cluster--index .idea .idea__header a dl dd {
-  opacity: 0;
-}
-
-.cluster.cluster--index .idea .idea__header a:hover dl dd,
-.cluster.cluster--index .idea .idea__header a:focus dl dd {
-  opacity: 1;
-}
-
-/* Single-item view (cluster--signal): dim all non-selected links and hide titles by default */
-.cluster.cluster--signal .idea .idea__header a {
-  color: rgba(var(--rgb-white), 0.4375);
-}
-
-.cluster.cluster--signal .idea .idea__header a dl dd {
-  opacity: 0;
-}
-
-/* Desktop: restore emphasis and titles on hover/focus, and show full list */
-@media (min-width: 64em) and (hover: hover) and (pointer: fine) {
   .cluster.cluster--signal .idea {
     display: block;
   }
@@ -72,11 +59,5 @@
   .cluster.cluster--signal .idea .idea__header a:focus dl dd {
     opacity: 1;
   }
-}
 
-/* Touch/coarse pointers: keep titles visible on index view */
-@media (hover: none), (pointer: coarse) {
-  .cluster.cluster--index .idea .idea__header a dl dd {
-    opacity: 1;
-  }
 }
