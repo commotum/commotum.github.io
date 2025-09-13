@@ -8,19 +8,19 @@
   opacity: 1;
 }
 
-.cluster.cluster--signal .signal {
+.cluster.cluster--idea .idea {
   display: none;
 }
 
-.cluster.cluster--signal .signal .signal__header a {
+.cluster.cluster--idea .idea .idea__header a {
   color: rgba(var(--rgb-white), 0.4375);
 }
 
-.cluster.cluster--signal .signal .signal__header a dl dd {
+.cluster.cluster--idea .idea .idea__header a dl dd {
   opacity: 0;
 }
 
-.cluster.cluster--signal .signal.signal--select {
+.cluster.cluster--idea .idea.idea--select {
   display: block;
   z-index: 102;
 }
@@ -45,17 +45,17 @@
     color: rgba(var(--rgb-white), 0.4375);
   }
 
-  .cluster.cluster--signal .signal {
+  .cluster.cluster--idea .idea {
     display: block;
   }
 
-  .cluster.cluster--signal .signal .signal__header a:hover,
-  .cluster.cluster--signal .signal .signal__header a:focus {
+  .cluster.cluster--idea .idea .idea__header a:hover,
+  .cluster.cluster--idea .idea .idea__header a:focus {
     color: var(--color-white);
   }
 
-  .cluster.cluster--signal .signal .signal__header a:hover dl dd,
-  .cluster.cluster--signal .signal .signal__header a:focus dl dd {
+  .cluster.cluster--idea .idea .idea__header a:hover dl dd,
+  .cluster.cluster--idea .idea .idea__header a:focus dl dd {
     opacity: 1;
   }
 
