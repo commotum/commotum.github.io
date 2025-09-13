@@ -1,5 +1,5 @@
 {%- assign order = site.data.ideas.order -%}
-<div class="cluster cluster--index">
+<div class="cluster cluster--{{ include.kind | default: 'index' }}{% if include.kind == 'signal' %} cluster--loaded{% endif %}">
 {%- for id in order -%}
   {%- assign doc = site.ideas | where: "idea_id", id | first -%}
   {%- if doc -%}
