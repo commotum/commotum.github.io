@@ -6,7 +6,9 @@ export function ready() {
 
   // Ensure the origin ring is visible
   const origin = document.querySelector('.origin');
-  if (origin) origin.classList.add('origin--overlap');
+  if (origin && window.matchMedia('(min-width: 64em)').matches) {
+    origin.classList.add('origin--overlap');
+  }
 }
 export function load() {}
 export function resize() {}
