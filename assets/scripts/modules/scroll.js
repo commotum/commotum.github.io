@@ -20,7 +20,8 @@ function focusWithoutScroll(el) {
 }
 
 function alignSelectedIdea() {
-  const target = document.querySelector('.idea .idea__header[data-selected]');
+  // On idea pages, the selected item has .idea--select in a signal cluster
+  const target = document.querySelector('.cluster.cluster--signal .idea.idea--select .idea__header');
   if (!target) return;
 
   // Respect explicit anchor navigation
@@ -28,8 +29,8 @@ function alignSelectedIdea() {
     return;
   }
 
-  // Ensure the element is focusable and focused for a11y, without scrolling
-  focusWithoutScroll(target);
+  // Attempt to focus without scrolling (no-op if not focusable)
+  try { focusWithoutScroll(target); } catch {}
 
   // Align target to the top accounting for scroll-padding-top.
   // Prefer modern API; fall back to manual calculation if options unsupported.
@@ -51,4 +52,3 @@ export function ready() {
 export function load() {
   alignSelectedIdea();
 }
-
