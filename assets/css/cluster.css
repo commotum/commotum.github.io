@@ -13,6 +13,14 @@
   opacity: 1;
 }
 
+/* Single-page focus on mobile: only show the selected idea */
+.cluster.cluster--signal .idea { display: none; }
+.cluster.cluster--signal .idea[data-selected="true"] { display: block; }
+
+@media(min-width: 64em) and (hover: hover) and (pointer: fine) {
+  .cluster.cluster--signal .idea { display: block; }
+}
+
 @media(min-width: 64em) and (hover: hover) and (pointer: fine) {
 
   .cluster {
