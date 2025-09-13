@@ -36,8 +36,8 @@
 }
 
 .header h1 a img {
-  height: 33px;
-  max-height: 33px;
+  height: 30px;
+  max-height: 30px;
   width: auto;
   object-fit: contain;
   border-radius: 4px;
