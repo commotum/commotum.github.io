@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 addEventListener('load', () => {
 
   controller.load();
+  scroll.load();
 
 });
 

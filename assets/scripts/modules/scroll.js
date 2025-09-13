@@ -47,6 +47,8 @@ export function ready() {
   alignSelectedIdea();
 }
 
-// No-op; we intentionally avoid re-scrolling on window.load to prevent flicker
-export function load() {}
+// Re-run on window.load to correct for late font/image reflow.
+export function load() {
+  alignSelectedIdea();
+}
 
