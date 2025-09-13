@@ -48,7 +48,30 @@
 
 /* No per-item scroll-margin-top; we use root scroll-padding-top on <html>. */
 
-/* Title reveal behavior for clusters is defined in cluster.css */
+/* Hide titles for non-selected ideas on idea pages; reveal on hover/focus */
+html.is-idea .cluster.cluster--index .idea .idea__header a dl dd {
+  opacity: 0;
+}
+
+html.is-idea .cluster.cluster--index .idea .idea__header a:hover dl dd,
+html.is-idea .cluster.cluster--index .idea .idea__header a:focus dl dd {
+  opacity: 1;
+}
+
+/* Single-page variant */
+html.is-idea .cluster.cluster--signal .idea .idea__header a dl dd {
+  opacity: 0;
+}
+
+html.is-idea .cluster.cluster--signal .idea .idea__header a:hover dl dd,
+html.is-idea .cluster.cluster--signal .idea .idea__header a:focus dl dd {
+  opacity: 1;
+}
+@media (hover: none), (pointer: coarse) {
+  html.is-idea .cluster.cluster--index .idea .idea__header a dl dd {
+    opacity: 1;
+  }
+}
 
 @media(min-width: 64em) and (hover: hover) and (pointer: fine) {
 
