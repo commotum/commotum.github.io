@@ -71,11 +71,11 @@
 }
 
 .nav .nav__logo a {
-  display: block;
-  height: var(--line-height);
-  margin-right: var(--spacing);
-  margin-top: var(--spacing);
-}
+    display: block;
+    height: calc(var(--line-height) * 0.55);
+    margin-right: var(--spacing);
+    margin-top: var(--spacing);
+  }
 
 .nav .nav__logo a img {
   height: 100%;
