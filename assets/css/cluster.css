@@ -38,6 +38,16 @@
   }
 }
 
+/* Index view: hide titles until intent */
+.cluster.cluster--index .idea .idea__header a dl dd {
+  opacity: 0;
+}
+
+.cluster.cluster--index .idea .idea__header a:hover dl dd,
+.cluster.cluster--index .idea .idea__header a:focus dl dd {
+  opacity: 1;
+}
+
 /* Single-item view (cluster--signal): dim all non-selected links and hide titles by default */
 .cluster.cluster--signal .idea .idea__header a {
   color: rgba(var(--rgb-white), 0.4375);
@@ -60,6 +70,13 @@
 
   .cluster.cluster--signal .idea .idea__header a:hover dl dd,
   .cluster.cluster--signal .idea .idea__header a:focus dl dd {
+    opacity: 1;
+  }
+}
+
+/* Touch/coarse pointers: keep titles visible on index view */
+@media (hover: none), (pointer: coarse) {
+  .cluster.cluster--index .idea .idea__header a dl dd {
     opacity: 1;
   }
 }
