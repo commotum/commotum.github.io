@@ -22,8 +22,8 @@
 {%- assign prev_doc = site.ideas | where: "idea_id", prev_id | first -%}
 
 <div class="controller controller--origin controller--loaded"
-     data-next="/{{ next_id }}"
-     data-previous="/{{ prev_id }}"
+     data-next="{{ next_doc.url | relative_url }}"
+     data-previous="{{ prev_doc.url | relative_url }}"
      role="navigation">
   <a href="{{ next_doc.url | relative_url }}"
      aria-label="Next idea: {{ next_doc.title }}"
