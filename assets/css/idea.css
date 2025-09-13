@@ -46,6 +46,15 @@
   display: none;
 }
 
+/* Align idea headers under fixed header when scrolled into view */
+html.is-idea .idea .idea__header {
+  scroll-margin-top: calc(var(--font-size) * 7.4);
+}
+
+@media (min-width: 64em) and (hover: hover) and (pointer: fine) {
+  html.is-idea .idea .idea__header { scroll-margin-top: 22.2vh; }
+}
+
 /* Hide titles for non-selected ideas on idea pages; reveal on hover/focus */
 html.is-idea .cluster.cluster--index .idea .idea__header a dl dd {
   opacity: 0;
