@@ -1,0 +1,39 @@
+{%- assign order = site.data.ideas.order -%}
+{%- assign current_id = include.selected_id -%}
+
+{%- assign idx = -1 -%}
+{%- for x in order -%}
+  {%- if x == current_id -%}{%- assign idx = forloop.index0 -%}{%- endif -%}
+{%- endfor -%}
+
+{%- if idx == -1 -%}
+  {%- assign next_id = order[0] -%}
+  {%- assign prev_id = order | last -%}
+{%- else -%}
+  {%- assign next_index = idx | plus: 1 -%}
+  {%- assign prev_index = idx | minus: 1 -%}
+  {%- if next_index >= order.size -%}{%- assign next_index = 0 -%}{%- endif -%}
+  {%- if prev_index < 0 -%}{%- assign prev_index = order.size | minus: 1 -%}{%- endif -%}
+  {%- assign next_id = order[next_index] -%}
+  {%- assign prev_id = order[prev_index] -%}
+{%- endif -%}
+
+{%- assign next_doc = site.ideas | where: "idea_id", next_id | first -%}
+{%- assign prev_doc = site.ideas | where: "idea_id", prev_id | first -%}
+
+<footer class="footer">
+  <ul>
+    <li><a href="{{ '/' | relative_url }}">Ideas</a></li>
+    <li><a href="{{ '/projects' | relative_url }}">Projects</a></li>
+    <li><a href="{{ '/about' | relative_url }}">About</a></li>
+    <li><a href="{{ '/contact' | relative_url }}">Contact</a></li>
+    <li><a href="{{ '/cv' | relative_url }}">CV</a></li>
+  </ul>
+  <div class="footer__next">
+    <a href="{{ next_doc.url | relative_url }}"
+       aria-label="Next idea: {{ next_doc.title }}"></a>
+  </div>
+  <!-- Deliberately no prev bubble on mobile; desktop shows the UL links -->
+  <!-- Footer styles already exist in assets/css/footer.css -->
+</footer>
+
