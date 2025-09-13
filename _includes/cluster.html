@@ -21,7 +21,7 @@
       </header>
       {%- if include.selected_id == doc.idea_id -%}
       <div class="idea__content">
-        {{ doc.excerpt | markdownify }}
+        {{ doc.content | markdownify }}
       </div>
       {%- endif -%}
     </section>
