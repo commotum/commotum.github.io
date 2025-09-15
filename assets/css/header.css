@@ -33,7 +33,7 @@
 
 .header h1 a {
   display: block;
-  height: calc(var(--line-height) * 0.5);
+  height: var(--logo-height);
 }
 
 .header h1 a img {
