@@ -1,13 +1,6 @@
-# Jekyll ideas Scaffold (from CSV)
+# Personal Website
 
-Generated from `ideas_21_quotes_template.csv` with columns:
-- `id`, `title`, `excerpt`, `image`, `theme_rgb`.
+README for my personal website. If you want more just visit it.
 
-Contents:
-- `_ideas/XX.md` — one stub per row with front matter filled.
-- `_data/ideas.yml` — ordered list of IDs for navigation.
-- `README.md` — this file.
+jakepeterson.com
 
-## Idea Tips
-- For monochrome, delete `theme_rgb` fields or ignore them in your layout.
-- To hide images, remove `image` or guard with a Liquid `{% if page.image %}` block.
