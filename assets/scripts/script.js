@@ -3,6 +3,7 @@ import * as navigate from './modules/navigate.js';
 import * as scroll from './modules/scroll.js';
 import * as signup from './modules/signup.js';
 import * as theme from './modules/theme.js';
+import * as ttt from './modules/ttt.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   signup.ready();
 
   theme.ready();
+  ttt.ready();
   // Unhide the page only after alignment to avoid any flash of pre-aligned content
   document.body.classList.add('is-ready');
 });
