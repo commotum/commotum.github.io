@@ -24,6 +24,11 @@
   display: flex;
 }
 
+/* When drawer is open, show logo in black (no invert) */
+.nav-active:checked ~ .nav .nav__logo a img {
+  filter: none;
+}
+
 @media(min-width: 64em) and (hover: hover) and (pointer: fine) {
 
   .nav-active:checked ~ .nav-underlay,
@@ -135,7 +140,7 @@
 }
 
 .nav .nav__options ul:last-child {
-  border-top: 1px solid rgba(var(--rgb-black), 0.1);
+  border-top: 0;
   margin-top: calc(var(--spacing) * 1.5);
   padding-bottom: calc(var(--spacing) * 1.5);
   padding-top: calc(var(--spacing) * 1.5);
