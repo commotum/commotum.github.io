@@ -66,14 +66,15 @@
 .nav .nav__logo {
   display: none;
   position: absolute;
-  right: 0;
+  left: 0;
   top: 0;
 }
 
 .nav .nav__logo a {
   display: block;
   height: calc(var(--line-height) * 0.55);
-  margin-right: var(--spacing);
+  margin-left: var(--spacing);
+  margin-right: 0;
   margin-top: var(--spacing);
 }
 
@@ -86,6 +87,9 @@
 
 .nav .nav__toggle {
   display: flex;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .nav .nav__toggle label {
