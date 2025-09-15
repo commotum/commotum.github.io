@@ -9,22 +9,32 @@ function smoothstep(x, a, b) {
   return t * t * (3 - 2 * t);
 }
 
+function getScrollPaddingTopPx() {
+  const val = getComputedStyle(document.documentElement).scrollPaddingTop;
+  const n = parseFloat(val);
+  return Number.isFinite(n) ? n : 0;
+}
+
 function updateFromScroll(root) {
   if (!root) return;
-  // Use the component itself as the scroll range so we don't need extra spacer height
   const rect = root.getBoundingClientRect();
   const vh = window.innerHeight || 1;
 
-  // Progress mapping over the entire zone height
-  const total = vh + rect.height;
-  const passed = vh - rect.top;
-  const t = clamp01(passed / total);
+  const pin = root.querySelector('.ttt__pin');
+  const pinRect = pin ? pin.getBoundingClientRect() : { height: rect.height };
+  const pinH = Math.max(1, pinRect.height);
 
-  // Row → Grid phase timings across [0..1]
-  const unV = smoothstep(t, 0.30, 0.40); // vertical first
-  const unH = smoothstep(t, 0.40, 0.70); // then horizontal
+  // Sticky top equals header offset
+  const stickyTop = getScrollPaddingTopPx();
 
-  // How much of the "row layout" remains on each axis
+  // Progress within the pinned interval: 0 at pin start, 1 at pin end
+  const tPinned = (stickyTop - rect.top) / Math.max(1, rect.height - pinH);
+  const t = clamp01(tPinned);
+
+  // Row → Grid across full range
+  const unV = smoothstep(t, 0.00, 0.50); // vertical first (0 → 50%)
+  const unH = smoothstep(t, 0.50, 1.00); // horizontal next (50% → 100%)
+
   const rowY = 1 - unV;
   const rowX = 1 - unH;
 
@@ -41,5 +51,9 @@ function attach(root) {
 
 export function ready() {
   const roots = document.querySelectorAll('.ttt');
-  roots.forEach(attach);
+  const stickyTop = getScrollPaddingTopPx();
+  roots.forEach((root) => {
+    root.style.setProperty('--ttt-top', `${stickyTop}px`);
+    attach(root);
+  });
 }

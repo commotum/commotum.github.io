@@ -15,6 +15,13 @@
   display: grid;
   justify-items: center; /* center within content column */
   gap: 0.8em;
+  min-block-size: var(--scrub-height); /* consume scroll while pinned */
+  position: relative;
+}
+
+.ttt__pin {
+  position: sticky;
+  top: var(--ttt-top, 0px); /* set via JS to match header offset */
 }
 
 .ttt__frame {
