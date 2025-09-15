@@ -75,7 +75,8 @@
   height: var(--logo-height);
   margin-left: var(--spacing);
   margin-right: 0;
-  margin-top: var(--spacing);
+  /* Center the logo within the top bar height: line-height + 2*spacing */
+  margin-top: calc(var(--spacing) + (var(--line-height) - var(--logo-height)) / 2);
 }
 
 .nav .nav__logo a img {
