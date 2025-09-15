@@ -87,7 +87,7 @@
   width: auto;
   filter: brightness(0) invert(1);
   transform: scale(var(--logo-scale));
-  transform-origin: center;
+  transform-origin: left center;
 }
 
 .nav .nav__toggle {
