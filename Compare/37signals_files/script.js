@@ -10,19 +10,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   navigate.ready();
 
-  // Align the selected idea before full page load to avoid a visible jump
-  scroll.ready();
-
   signup.ready();
 
   theme.ready();
-  // Unhide the page only after alignment to avoid any flash of pre-aligned content
-  document.body.classList.add('is-ready');
+
 });
 
 addEventListener('load', () => {
 
   controller.load();
+
   scroll.load();
 
 });
