@@ -11,10 +11,8 @@ function smoothstep(x, a, b) {
 
 function updateFromScroll(root) {
   if (!root) return;
-  const zone = root.querySelector('.ttt__scrub');
-  if (!zone) return;
-
-  const rect = zone.getBoundingClientRect();
+  // Use the component itself as the scroll range so we don't need extra spacer height
+  const rect = root.getBoundingClientRect();
   const vh = window.innerHeight || 1;
 
   // Progress mapping over the entire zone height
@@ -45,4 +43,3 @@ export function ready() {
   const roots = document.querySelectorAll('.ttt');
   roots.forEach(attach);
 }
-

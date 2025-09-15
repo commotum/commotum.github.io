@@ -13,7 +13,7 @@
 
   color: var(--color-white);
   display: grid;
-  justify-items: start;
+  justify-items: center; /* center within content column */
   gap: 0.8em;
 }
 
@@ -21,6 +21,7 @@
   /* keep interaction normal; no fixed overlay */
   display: grid;
   place-items: center;
+  inline-size: 100%;
 }
 
 /* 3×3 board */
@@ -99,9 +100,7 @@
 }
 
 /* The element that defines how long you can scrub */
-.ttt__scrub {
-  block-size: var(--scrub-height);
-}
+.ttt__scrub { display: none; block-size: 0; }
 
 /* Responsive niceties inside the narrow idea column */
 @media (max-width: 40em) {
@@ -109,4 +108,3 @@
     --cell: 56px;
   }
 }
-
