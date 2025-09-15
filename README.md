@@ -1,6 +1,6 @@
 # Personal Website
 
-README for my personal website. If you want more just visit it.
+Just go to the website for pete's sake.
 
 [jakepeterson.com](https://jakepeterson.com)
 
