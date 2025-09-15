@@ -13,7 +13,7 @@
 }
 
 .nav-active:checked ~ .nav .nav__logo {
-  display: block;
+  display: flex;
 }
 
 .nav-active:checked ~ .nav .nav__toggle label span {
@@ -68,6 +68,8 @@
   position: absolute;
   left: 0;
   top: 0;
+  height: calc(var(--line-height) + (var(--spacing) * 2));
+  align-items: center;
 }
 
 .nav .nav__logo a {
@@ -75,8 +77,7 @@
   height: var(--logo-height);
   margin-left: var(--spacing);
   margin-right: 0;
-  /* Center the logo within the top bar height: line-height + 2*spacing */
-  margin-top: calc(var(--spacing) + (var(--line-height) - var(--logo-height)) / 2);
+  margin-top: 0;
 }
 
 .nav .nav__logo a img {
@@ -88,9 +89,11 @@
 
 .nav .nav__toggle {
   display: flex;
+  align-items: center;
   position: absolute;
   right: 0;
   top: 0;
+  height: calc(var(--line-height) + (var(--spacing) * 2));
 }
 
 .nav .nav__toggle label {
@@ -98,8 +101,8 @@
   cursor: pointer;
   display: flex;
   justify-content: flex-start;
-  line-height: var(--line-height);
-  padding: var(--spacing);
+  height: 100%;
+  padding: 0 var(--spacing);
   pointer-events: auto;
 }
 
