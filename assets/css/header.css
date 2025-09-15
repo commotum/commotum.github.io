@@ -32,8 +32,9 @@
 }
 
 .header h1 a {
-  display: block;
-  height: var(--logo-height);
+  display: flex;
+  align-items: center;
+  height: var(--line-height);
 }
 
 .header h1 a img {
@@ -43,6 +44,8 @@
   object-fit: contain;
   border-radius: 4px;
   filter: brightness(0) invert(1);
+  transform: scale(var(--logo-scale));
+  transform-origin: center;
 }
 
 .header ul {
