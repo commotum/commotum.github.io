@@ -22,6 +22,8 @@
 
 .nav-active:checked ~ .nav .nav__options {
   display: flex;
+  /* Add a touch more space below the logo before items */
+  padding-top: var(--spacing);
 }
 
 /* When drawer is open, show logo in black (no invert) */
