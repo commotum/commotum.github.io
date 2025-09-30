@@ -50,7 +50,7 @@
   --line-height: calc(1.3em + 1vw);
 
   /* Global logo sizing: tweak scale once, used everywhere */
-  --logo-scale: 0.60;
+  --logo-scale: 0.50;
   --logo-height: calc(var(--line-height) * var(--logo-scale));
 
   --spacing: 0.75em;
